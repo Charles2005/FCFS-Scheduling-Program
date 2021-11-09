@@ -1,5 +1,7 @@
 from tkinter import *
-from config import SIZE, TITLE, BG_COLOR
+from config import SIZE, TITLE, ALGO_NAME
+from config import BG_COLOR, TEXT_BORDER_COLOR, ENTRY_BG_COLOR, TABLE_BG_COLOR
+from config import ALGO_FONT_SIZE, LABEL_FONT_SIZE
 
 
 class FCFS():
@@ -8,14 +10,14 @@ class FCFS():
         self.title = TITLE
         self.background_color = BG_COLOR
 
-    def run(self):
+    def input_window(self):
         sc = Tk()
-        # Window size
+        # Windows size
         sc.geometry(self.window_size)
         sc.resizable(False, False)
-        # Window title
+        # Windows title
         sc.title(self.title)
-        # Window Background Color
+        # Windows Background Color
         sc.config(background=self.background_color)
         # Function to initialize the window
         sc.mainloop()

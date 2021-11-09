@@ -3,7 +3,7 @@ from GUI import FCFS
 
 def main():
     fcfs = FCFS()
-    fcfs.run()
+    fcfs.input_window()
 
 
 if __name__ == '__main__':
