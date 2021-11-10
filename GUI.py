@@ -10,6 +10,7 @@ class FCFS:
         self.background_color = BG_COLOR
         self.arrival_time = None
         self.burst_time = None
+
     def input_window(self):
         sc = Tk()
         # Windows size
