@@ -1,7 +1,7 @@
 from tkinter import *
-from config import SIZE, TITLE, ALGO_NAME
+from config import  ALGO_NAME
 from config import BG_COLOR, TEXT_BORDER_COLOR, ENTRY_BG_COLOR, TABLE_BG_COLOR
-from functions import fcfs_sched
+from functions import fcfs_sched, gantt_chart
 
 class FCFS:
     def __init__(self, master):
@@ -39,8 +39,12 @@ class FCFS:
 
     def chart_window(self):
         print(fcfs_sched(self.arrival_time.get(), self.burst_time.get()))
+        chart_root = Toplevel(self.master)
+        chart_root.geometry("720x720")
         # Rectangle
-        my_canvas = Canvas(Toplevel(self.master), width=720, height=480, bg=BG_COLOR, bd=0, highlightthickness=0)
+        my_canvas = Canvas(chart_root, width=720, height=720, bg=BG_COLOR, bd=0, highlightthickness=0)
         my_canvas.pack()
-        my_canvas.create_rectangle(10, 468, 710, 465, fill=TEXT_BORDER_COLOR)
+        my_canvas.create_rectangle(10, 708, 710, 705, fill=TEXT_BORDER_COLOR)
         my_canvas.create_rectangle(10, 13, 710, 10, fill=TEXT_BORDER_COLOR)
+        # Gantt Chart
+        gantt_chart(my_canvas)
