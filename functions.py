@@ -73,7 +73,7 @@ def gantt_chart(process_name, arrival_time, burst_time, master):
 
     # Creating Gantt Chart
     if len(set(arrival_values)) <= 1:  # if all arrival elements were the same
-        num = 0
+        num = arrival_values[0]
         for i in burst_values:
             burst_values2.append(num)
             num += i
@@ -91,7 +91,7 @@ def gantt_chart(process_name, arrival_time, burst_time, master):
         canvas.draw()
         canvas.get_tk_widget().place(x=100, y=20)
     else:
-        num1 = 0
+        num1 = sorted_arrival_time[0]
         for num in sorted_arrival_time:
             sorted_burst_values.append(gantt_values[num])
         for num in sorted_burst_values:
