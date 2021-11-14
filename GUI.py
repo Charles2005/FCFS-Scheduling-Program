@@ -90,8 +90,8 @@ class FCFS:
         treescrollx.place(x=100, y=580)
         treescrolly.place(x=630, y=425)
         # Averages
-        average_turnaround_time = sum(summ_table["Turnaround Time"]) / len(summ_table)
-        average_waiting_time = sum(summ_table["Waiting Time"]) / len(summ_table)
+        average_turnaround_time = round(sum(summ_table["Turnaround Time"]) / len(summ_table), 2)
+        average_waiting_time = round(sum(summ_table["Waiting Time"]) / len(summ_table), 2)
         average_turnaround_time_label= Label(chart_root, text="Average Turnaround Time",
                                              font=("Play", 12, "bold"),
                                              fg=TEXT_BORDER_COLOR,

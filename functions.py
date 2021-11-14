@@ -20,7 +20,7 @@ def fcfs_sched(process_name, arrival_time, burst_time, master):
     # Creating Table
     if len(set(arrival_values)) <= 1:  # if all arrival elements were the same
         # Calculating complete time
-        num = 0
+        num = arrival_values[0]
         for i in burst_values:
             num += i
             complete_time.append(num)
@@ -35,12 +35,14 @@ def fcfs_sched(process_name, arrival_time, burst_time, master):
                                    "Turnaround Time": turnaround_time,
                                    "Waiting Time": waiting_time })
     else:
-        num1 = 0
+        num1 = sorted_arrival_time[0]
         for num in sorted_arrival_time:
             sorted_burst_values.append(gantt_values[num])
         for num in sorted_burst_values:
             num1 += num
             complete_time.append(num1)
+        print(sorted_burst_values)
+        print(complete_time)
         for values in sorted_arrival_time:
             sorted_process_names.append(gantt_process[values])
         # Calculating turnaround time and waiting time
